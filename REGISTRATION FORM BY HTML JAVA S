@@ -1,0 +1,58 @@
+<html>
+<head>
+<title>Form Example</title>
+<script LANGUAGE="JavaScript" type="text/javascript">
+    function display() {
+    DispWin = window.open('','NewWin', 'toolbar=no,status=no,width=700,height=700')
+    message = "<ul><li><b>USER ID: </b>" + document.form1.userid.value;
+    message += "<li><b>Name : </b>" + document.form1.username.value;
+    message += "<li><b>Address : </b>" + document.form1.address.value + "</ul>";
+    DispWin.document.write(message);
+    }
+</script>
+</head>
+<body>
+    <h1>Registration Form</h1>
+    Enter the following information. 
+    <div class="registration-form">
+        <div class="panel">
+            <form name='form1' onSubmit="return formValidation();">
+                User id:
+                <input type="text" name="userid" size="12" ><br>
+                Password :
+                <input type="password" name="passid" size="12" ><br>
+                Name:
+                <input type="text" name="username" size="50" ><br>
+                Address:
+                <input type="text" name="address" size="50" ><br>
+                Country:
+                <select name="country">
+                        <option selected="" value="Default">(Please select a country)</option>
+                        <option value="AF">Australia</option>
+                        <option value="AL">Canada</option>
+                        <option value="DZ">India</option>
+                        <option value="AS">Russia</option>
+                        <option value="AD">USA</option>
+                </select><br>
+                ZIP Code:
+                <input type="text" name="zip" /><br>
+                Email:
+                <input type="text" name="email" size="50" /><br>
+                Sex:
+                <input type="radio" name="msex" value="Male" /><span>Male</span>
+                <input type="radio" name="fsex" value="Female" /><span>Female</span>
+                Language:
+                <input type="checkbox" name="en" value="en" checked /><span>English</span>
+                <input type="checkbox" name="nonen" value="noen" /><span>Non English</span><br>
+                About:
+                <textarea name="desc" id="desc"></textarea><br>
+                <div class="send">
+                    <input TYPE="BUTTON" VALUE="Display" onClick="display();">
+                </div>
+            </form>
+        </div>
+    </div>
+    
+</form>
+</body>
+</html>
